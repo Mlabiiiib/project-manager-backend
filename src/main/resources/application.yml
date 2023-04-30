@@ -1,0 +1,22 @@
+# Database configuration
+spring:
+  datasource:
+    #driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/project-manager-labib
+    username: labib
+    password: labib
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+# Lombok configuration
+lombok:
+  accessors:
+    chain: true
+
+# Server configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /api
