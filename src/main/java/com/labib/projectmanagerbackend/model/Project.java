@@ -5,7 +5,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "project")
@@ -19,6 +20,6 @@ public class Project {
     private String name;
     private String description;
     private String client;
-    private LocalDateTime deadline;
+    private LocalDate deadline;
     private String status; // added status field
 }
