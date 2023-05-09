@@ -2,7 +2,8 @@ version: '3.8'
 services:
   db:
     image: postgres:14.1-alpine
-    restart: always
+
+    #restart: always
     environment:
       POSTGRES_USER: labib
       POSTGRES_PASSWORD: labib
@@ -10,7 +11,6 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - db:/var/lib/postgresql/data
-volumes:
-  db:
-    driver: local
+      - ./postgres-data:/var/lib/postgresql/data
+      # copy the sql script to create tables
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
